@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+header{
+    width: 100%;
+    line-height: 15vh;
+    background: linear-gradient(to top, #020507, #122433, #273947);
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.094),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.098),
+    0 12.5px 10px rgba(0, 0, 0, 0.16),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.092),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.096),
+    0 100px 80px rgba(0, 0, 0, 0.12); 
+}
+
+h1{
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    letter-spacing: 15px;
+    font-family: 'Source Code Pro', monospace;
+    text-shadow: 0 1px 0 #010005,
+                 0 2px 0 #010108,
+                 0 30px 5px rgba(0,0,0,.1);
+}
+
+section{
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2E4354;
+    background: -webkit-radial-gradient(bottom, #2E4354, #000000);
+    background: -moz-radial-gradient(bottom, #2E4354, #000000);
+    background: radial-gradient(to top, #2E4354, #000000);
+}
+
+.gameArea{
+    width: 50%;
+    height: 400px;
+    padding: 20px 0;
+    background-color: #2ed573;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.7rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.094),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.098),
+    0 12.5px 10px rgba(0, 0, 0, 0.16),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.092),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.096),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+    background: #2E4354;
+    background: -webkit-radial-gradient(bottom, #2E4354, #000000);
+    background: -moz-radial-gradient(bottom, #2E4354, #000000);
+    background: radial-gradient(to top, #2E4354, #000000); 
+}
+
+h3{
+    text-align: center;
+    font-size: 1.5rem;
+    color: rgb(176, 231, 24);
+}
+
+input{
+    width: 40%;
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-color: #b8f7fc;
+    color: black;
+    margin: 2rem 0;
+    font-size: 1.1rem;
+}
+
+button{
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    border: #2f3542;
+    margin-top: 10px;
+    color: white;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.094),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.098),
+    0 12.5px 10px rgba(0, 0, 0, 0.16),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.092),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.096),
+    0 100px 80px rgba(0, 0, 0, 0.12) ; 
+}
+
+button.btn{
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    position: relative;
+    background: -webkit-linear-gradient(rgb(14, 81, 102), rgb(38, 48, 78));
+    text-transform: uppercase;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.65,-0.25,0.25,1.95);
+}
+
+button.btn:hover, button.btn:focus, button.btn:active{
+    letter-spacing: 0.125rem;
+    word-spacing: 0.2rem;
+}
+
+.hidden{
+    display: none;
+}
+
+.correct{
+    color:hsl(145, 86%, 49%);
+    padding: 1rem;
+}
+.incorrect{
+    color:rgb(212, 42, 42);
+    padding: 1rem;
+}
+
+#counter{
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    letter-spacing: 5px;
+    font-family: 'Source Code Pro', monospace;
+    text-shadow: 0 1px 0 #010005,
+                 0 2px 0 #010108,
+                 0 30px 5px rgba(0,0,0,.1);
+}
+
+img{
+    height: 50px;
+}
