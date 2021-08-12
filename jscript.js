@@ -18,7 +18,7 @@ function startTimer() {
   }, 1000)
 }
 function getTimerTime() {
-    if(document.getElementById('timer').innerText<10){
+    if(document.getElementById('timer').innerText<60){
         if(tm==true){
             document.getElementById('timer').style.display = "none";
             clearInterval(startTime)
@@ -29,7 +29,7 @@ function getTimerTime() {
         return Math.floor((new Date() - startTime) / 1000)
         }
     }
-    else if(document.getElementById('timer').innerText==10){
+    else if(document.getElementById('timer').innerText==60){
         guess.classList.toggle('hidden');
         play = false;
         btn.innerHTML = "Start Again"
