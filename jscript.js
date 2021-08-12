@@ -1,6 +1,6 @@
 const TextToDisplay = 'https://random-word-api.herokuapp.com//word?number=1';
 const msg = document.querySelector('.msg');
-const guess = document.querySelector('input');  
+const guess = document.querySelector('input'); 
 const btn = document.querySelector('.btn');
 let play = false;
 let newWords = "";
@@ -8,6 +8,41 @@ let ranWords = "";
 let sWords 
 let myWord = "";
 var ctr = 0;
+let tm = false;
+
+let startTime = 0;
+function startTimer() {
+  startTime = new Date()
+  setInterval(() => {
+    document.getElementById('timer').innerText = getTimerTime()
+  }, 1000)
+}
+function getTimerTime() {
+    if(document.getElementById('timer').innerText<10){
+        if(tm==true){
+            document.getElementById('timer').style.display = "none";
+            clearInterval(startTime)
+            tm=false;
+            return "Very Good";
+        }
+        else{
+        return Math.floor((new Date() - startTime) / 1000)
+        }
+    }
+    else if(document.getElementById('timer').innerText==10){
+        guess.classList.toggle('hidden');
+        play = false;
+        btn.innerHTML = "Start Again"
+        clearInterval(startTime)
+        msg.innerHTML = `Corect Word is: ${newWords}`;
+        return "Time's Up"
+    }
+    else{
+        play = false;
+        return "Time's Up"
+    }
+}
+    
 
 const createNewWords = () => {
     getNextLine();
@@ -30,6 +65,10 @@ btn.addEventListener('click',function(){
     msg.classList.remove('incorrect');
     
     if(!play){
+        document.getElementById('timer').innerText=0;
+        startTime = 0;
+        startTimer()
+        document.getElementById('timer').style.display = "block";
         play = true;
         btn.innerHTML="Guess";
         guess.classList.toggle('hidden');
@@ -42,13 +81,14 @@ btn.addEventListener('click',function(){
         let tempWords = guess.value;
         if(tempWords === newWords){
             play = false;
-            msg.innerHTML = `It's correct. It is ${newWords}`;
-            msg.classList.remove('incorrect');
-            msg.classList.add('correct');
+            tm=true;
             var img=document.createElement('img');
             img.classList.add('img')
             img.src = './check.png' 
+            msg.innerText = `It's correct. It is ${newWords}\n`;
             msg.appendChild(img);
+            msg.classList.remove('incorrect');
+            msg.classList.add('correct');
             ctr++;
             document.getElementById("counter").innerHTML="CORRECT WORDS: " + ctr;
             btn.innerHTML = "Start Again";
@@ -56,7 +96,11 @@ btn.addEventListener('click',function(){
             guess.value = "";
         }
         else{
-            msg.innerHTML = `Sorry. It's incorrect. Try again ${ranWords}`;
+            msg.innerText = `Sorry. It's incorrect. Try again ${ranWords}\n`;
+            var img=document.createElement('img');
+            img.classList.add('img')
+            img.src = './wrong.png' 
+            msg.appendChild(img);
             msg.classList.add('incorrect');
             guess.value = "";
         }
